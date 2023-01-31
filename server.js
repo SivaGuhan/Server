@@ -12,7 +12,7 @@ const mongoose=require("mongoose");
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect("mongodb+srv://SivaGuhan:sivaguhan@cluster0.3rhrpsr.mongodb.net/MyBlog?retryWrites=true&w=majority",{useNewUrlParser:true});
+mongoose.connect(process.env.MONGO_URL,{useNewUrlParser:true});
 
 const Schema=new mongoose.Schema({
     title:"String",
