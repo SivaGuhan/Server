@@ -19,9 +19,13 @@ const Schema=new mongoose.Schema({
     content:"String"
 });
 
+let corsOptions = {
+    origin : "*",
+ }
+
 const Cont=mongoose.model("Article",Schema);
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 
